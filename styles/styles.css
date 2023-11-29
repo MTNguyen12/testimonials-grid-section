@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: hsl(210, 46%, 95%);
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 87vw;
+  row-gap: 1.5em;
+  margin: auto;
+}
+
+/* card designs */
+
+.testimonial-card {
+  border-radius: 8px;
+}
+
+#purple-card {
+  margin-top: 72px;
+  background-image: url(../images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+  background-color: hsl(263, 55%, 52%);
+  color: hsl(0, 0%, 81%);
+}
+
+#gray-card {
+  background-color: hsl(217, 19%, 35%);
+  color: hsl(0, 0%, 100%);
+}
+
+.white-card {
+  box-shadow: 15px 10px 20px hsla(0, 0%, 0%, 0.1);
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(217, 19%, 35%);
+}
+
+#dark-gray-card {
+  background-color: hsl(219, 29%, 14%);
+  color: hsl(0, 0%, 100%);
+}
+
+/* inside container spacing  */
+
+.user-container, .main-paragraph, .review-paragraph {
+  margin: 0 32px;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+
+.user-image {
+  margin-right: 16px;
+  border: solid 2px hsl(263, 49%, 63%);
+  border-radius: 2em;
+  height: 2em;
+}
+
+.name {
+  margin-bottom: 2px;
+  font-size: 0.85em;
+}
+
+.title {
+  opacity: 0.5;
+  font-size: 0.7em;
+}
+
+.main-paragraph {
+  margin-bottom: 16px;
+  font-size: 1.25em;
+}
+
+.review-paragraph {
+  opacity: 0.7;
+  margin-bottom: 40px;
+  font-size: 0.85em;
+}
+
+#tall-card {
+  margin-bottom: 72px;
+}
+
+/* designing grid for desktop */
+
+@media screen and (min-width: 600px) {
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  #purple-card {
+    margin-top: 0;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(4, 258px);
+    grid-auto-rows: 260px;
+    column-gap: 2em;
+  }
+
+  #purple-card {
+    grid-column: 1 / 3;
+    order: 1;
+  }
+
+  #gray-card {
+    order: 2;
+  }
+
+  #tall-card {
+    grid-row: span 2;
+    order: 3;
+    margin-bottom: 0;
+  }
+
+  #dark-gray-card {
+    grid-column: 2 / 4;
+    order: 5;
+  }
+
+  .last-card {
+    order: 4;
+  }
+}
